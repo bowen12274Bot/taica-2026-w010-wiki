@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>依賴圖：哪些工作可以先開始？｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　案例工作紙</p><h1>依賴圖：哪些工作可以先開始？</h1><div class="layout"><article><p class="note">合成情境，供練習工程判斷。</p><div><p>【合成教學案例】 箭頭代表下游需讀到上游交付物。兩個 Worker 開著視窗並不會解除任何一條依賴。</p>
+<pre><code class="language-text">B0 → 需求一 → F0（核准契約）┬→ F1（API）┐
+                          └→ F2（UI） ┴→ F3（基線整合）→ 接受 B1
+待決 → BLOCKED → 裁決 → 回原票；測試失敗 → 修責任票 → 再驗 F3
+B1 → 需求二（多標籤）→ 新契約 → 新工作票
+</code></pre>
+<p>人工派工：依 F0 核准記錄，分別把票與工作區交給執行者。Coordinator 派工：掃描前置均完成的票 → 核對所有者及授權 → 記錄有效 Dispatch → 收件與檢查產物 → 更新狀態。兩條路都要等 F3，且只有具權者能採納新基線。若 F2 只交 mock 結果，F3 必須跑真實資料路徑。</p>
+<p>教學入口：<a href="../tutorials/multi-agent-org-and-environment.html">T05</a>、<a href="../tutorials/requirements-to-delivery.html">T06</a>、<a href="../tutorials/scheduling-supervision-handoff.html">T08</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="../tutorials/multi-agent-org-and-environment.html">T05｜先畫責任與工作區，再決定開幾個 Agent</a></li></ul></footer></article></div></main></body></html>

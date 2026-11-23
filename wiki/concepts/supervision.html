@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>工作監督、回報與交接｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>工作監督、回報與交接</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>監督需要知道目前由誰負責、哪一次派工仍有效、產物在哪裡，以及下一步是否需要決策。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P13 區分 heartbeat、question、worker_done 等訊息。U07 【個人直接觀點】 偏好文件式交接。該研究的編輯示例 【工程設計】 建議留下基準、已完成事項、驗證結果、阻塞與接手步驟。U09 【歷史研究整理】 涉及跨專案管理資產。恢復時先核對版本與未結任務。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>失聯時先查看最近進度與實際產物，確認原嘗試狀態才重派，避免兩個 Worker 同時修改。專職監督 Agent 屬可選配置，缺少完整自主執行證據。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="coordination.html">Coordinator、Worker 與 Integrator</a>、<a href="task-graph.html">Task DAG 與動態調度</a>、<a href="authority.html">需求邊界與人類授權</a>。</p>
+<p>來源：<a href="../sources/p13-summary.html">P13</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<h2 id="section-5">各層保存什麼、向上回報什麼</h2>
+<p>Context 是當次送入模型的資訊；Memory 是可跨任務取用的知識。Project State 指具所有者與版本的權威基線、架構決策、未結阻塞；Task State 則是單項工作的依賴、當前嘗試、執行者與驗收狀態。Trace 供事後回查執行事件。更換 session 時先查共享狀態，再重建所需 Context。</p>
+<p>【教學編排】 Human 取得目標、風險、優先順序與待裁決事項；Coordinator 掌握 DAG、所有權、派工與證據索引；Worker 取得局部介面、可改範圍、測試及退出條件；Integrator 需要基準、各交付 commit、介面契約及跨模組回歸結果。可讀某項資訊不代表有權修改或核准。</p>
+<p>向上摘要寫明相對哪個基準、哪項驗收已過、哪項未測、阻塞及下一位決策者；每項結果附 Task／Dispatch、commit、測試輸出路徑或 trace ID。人類看到摘要即可決策，有疑問時循指標回查原件。失敗和未測範圍隨摘要傳遞。U07 【個人直接觀點】 支持文件交接；欄位屬編輯提案，U08、U09 【歷史研究整理】 提供職責及管理資產背景。</p>
+<p>來源：<a href="../../docs/phase2b-final/assignment/index.html#receipts">S03（來源回執）</a>、<a href="../sources/p16-summary.html">P16</a>。</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/context-knowledge-tools.html">把正確的規格帶進本輪 Context</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/262">第4章 · 工程實務決策</a></p><h2>引用此頁的文章</h2><ul><li><a href="authority.html">需求邊界與人類授權</a></li><li><a href="coordination.html">Coordinator、Worker 與 Integrator</a></li><li><a href="quality.html">工程品質與驗證</a></li><li><a href="task-graph.html">Task DAG 與動態調度</a></li><li><a href="../guides/chapter-01.html">第一章　Agent 基礎理論</a></li><li><a href="../guides/chapter-03.html">第三章　多 Agent 軟體工程架構</a></li><li><a href="../guides/chapter-04.html">第四章　多 Agent 實務與工程決策</a></li><li><a href="../guides/chapter-05.html">第五章　多 Agent 工程品質與效率驗證</a></li><li><a href="../tutorials/context-knowledge-tools.html">T02｜把正確的規格帶進本輪 Context</a></li><li><a href="../tutorials/scheduling-supervision-handoff.html">T08｜失聯的工作票如何安全接手</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a><a href="#section-5">各層保存什麼、向上回報什麼</a></aside></div></main></body></html>

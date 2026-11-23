@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Agent 與 Workflow｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>Agent 與 Workflow</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>先問誰決定下一步。一次聊天可以只產生文字；工作流程可讓程式決定步驟，Agent 則能依工具觀察，在授權範圍選擇下一步。聊天介面本身不足以判定架構。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P01 對照固定流程與動態控制。以修復測試為例，固定流程每次執行相同測項；Agent 可先看失敗訊息，再決定要讀哪個檔。P02 描述 runner 如何執行這個選擇。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>先用可重現的流程處理已知路徑。有必要依中間結果改變路徑時，再衡量自主性增加的成本與停止條件。U01 【歷史研究整理】 的五層分析是個人教學視角。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="agent-loop.html">Agent Loop 與工具呼叫</a>、<a href="task-graph.html">Task DAG 與動態調度</a>。</p>
+<p>來源：<a href="../sources/p01-summary.html">P01</a>、<a href="../sources/p02-summary.html">P02</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<p>本頁研討題：Agent 與一般 LLM 聊天有什麼不同？</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/agent-system-model.html">誰決定下一步？從模型輸出追到停止條件</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/12">第1章 · Agent 基礎</a></p><h2>引用此頁的文章</h2><ul><li><a href="agent-loop.html">Agent Loop 與工具呼叫</a></li><li><a href="../guides/chapter-01.html">第一章　Agent 基礎理論</a></li><li><a href="../tutorials/agent-system-model.html">T01｜誰決定下一步？從模型輸出追到停止條件</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a></aside></div></main></body></html>

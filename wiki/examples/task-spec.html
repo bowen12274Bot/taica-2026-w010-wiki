@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>工作票：契約、API、畫面與整合｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　案例工作紙</p><h1>工作票：契約、API、畫面與整合</h1><div class="layout"><article><p class="note">合成情境，供練習工程判斷。</p><div><p>【合成教學案例】 每列是一張可複製的票；表中提交與結果欄請執行者實填。</p>
+<div class="table" tabindex="0" role="region" aria-label="工作表，可左右捲動"><table>
+<thead>
+<tr>
+<th>票／Target</th>
+<th>Change／Constraints</th>
+<th>Owner／工作區／Base</th>
+<th>Dependencies</th>
+<th>Output</th>
+<th>Acceptance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F0 凍結單標籤契約</td>
+<td>定義省略與無匹配；不開多選</td>
+<td>人類核准、Coordinator 整理／規格區／B0</td>
+<td>需求一</td>
+<td>介面例與 fixture A/B</td>
+<td>核准三個輸入輸出</td>
+</tr>
+<tr>
+<td>F1 API 篩選</td>
+<td>GET /todos 加單值匹配；維持原列表順序</td>
+<td>API Worker／wt-api／B0＋F0 契約</td>
+<td>F0</td>
+<td>API diff、commit、測試輸出</td>
+<td>work→A，missing→空，省略→A/B</td>
+</tr>
+<tr>
+<td>F2 UI 操作</td>
+<td>選取與清除；不得改 API 規則</td>
+<td>UI Worker／wt-ui／B0＋F0 契約</td>
+<td>F0</td>
+<td>畫面 diff、模擬回應與操作紀錄</td>
+<td>確認參數、結果及清除；標示 mock 範圍</td>
+</tr>
+<tr>
+<td>F3 整合交付</td>
+<td>套入雙方變更，重跑真 API/UI；不得自行裁決歧義</td>
+<td>Integrator／wt-int／B0</td>
+<td>F1＋F2</td>
+<td>整合提交、回歸、未測清單</td>
+<td>授權者核對三個案例後才登記 B1</td>
+</tr>
+</tbody>
+</table>
+</div><p>F1/F2 可並行的前提是同一版 fixture。若兩者都要改同一型別，先回 F0 協調；重派沿用票號，另記派工嘗試。</p>
+<p>教學入口：<a href="../tutorials/multi-agent-org-and-environment.html">T05</a>、<a href="../tutorials/requirements-to-delivery.html">T06</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="../tutorials/requirements-to-delivery.html">T06｜讓第二項需求接上同一個專案</a></li></ul></footer></article></div></main></body></html>

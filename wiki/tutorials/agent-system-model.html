@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T01｜誰決定下一步？從模型輸出追到停止條件｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T01｜誰決定下一步？從模型輸出追到停止條件</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 能讀懂一次輸入與輸出。面對「找出標籤篩選失敗原因」，先判斷是詢問文字，還是授權系統動手檢查。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【公開技術文件】 P01、P02：模型根據輸入產生文字或工具請求；runtime 檢查輸出類型並執行允許的動作，把觀察送回下一輪。Workflow 可由程式預定步驟；Agent 可依中途觀察選路。P17 的 harness 包含專案規則、工具與可執行的回饋。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 問題 → harness 組裝 Context（指令、介面契約、可用工具）→ runtime 呼叫 Model → 工具請求 → 權限檢查 → Tools → 觀察回到 Context。模型也可直接輸出答案。</p>
+<ol>
+<li>
+<p>【合成教學案例】 讀 B0 的標籤規格。若只問「空清單應顯示什麼」，有契約即可直接解釋；若委託修復，先確認可改範圍，再開啟工具。</p>
+</li>
+<li>
+<p>【合成教學案例】 固定路徑依序載入 fixture、呼叫 API、比對結果。動態路徑見到伺服器回傳正確，便改查 UI 的狀態更新；兩者都能用同一模型。</p>
+</li>
+<li>
+<p>【合成教學案例】 模擬 trace：要求執行篩選測試 → 觀察找不到 fixture → 讀專案測試入口 → 改用正確路徑重試 → 發現應回一筆卻回兩筆 → 在授權範圍修正比對 → 重跑正例及未篩選回歸 → 留下待整合結果。</p>
+</li>
+<li>
+<p>【合成教學案例】 若再次缺 fixture，記錄阻塞及缺少的輸入；若必須變更 API，停在批准點。runner 回傳最終輸出只表示本輪結束，交付另看驗收。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【歷史研究整理】 U01 用 Prompt→Context→Harness→Loop→Graph 分析指令、可見資訊、執行環境、反覆修正及多任務依賴；此框架描述觀察角度。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 測試命令回傳零項測試，可否關票？</p>
+<p>判斷依據：先核對測試是否被發現、基線與 fixture 是否正確；取得能區分預期及錯誤行為的斷言後才判定。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/scenario.html">案例工作紙</a> · <a href="../concepts/agent-workflow.html">Agent 與 Workflow</a> · <a href="../concepts/agent-loop.html">Agent Loop 與工具呼叫</a> · <a href="../concepts/harness.html">規格與 Harness Engineering</a> · <a href="../concepts/authority.html">需求邊界與人類授權</a></p>
+<p>來源：<a href="../sources/p01-summary.html">P01</a>、<a href="../sources/p02-summary.html">P02</a>、<a href="../sources/p17-summary.html">P17</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<p><a href="context-knowledge-tools.html">下個單元</a></p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/12">第1章 · Agent 基礎</a></p><h2>引用此頁的文章</h2><ul><li><a href="../concepts/agent-loop.html">Agent Loop 與工具呼叫</a></li><li><a href="../concepts/agent-workflow.html">Agent 與 Workflow</a></li><li><a href="../concepts/authority.html">需求邊界與人類授權</a></li><li><a href="../concepts/harness.html">規格與 Harness Engineering</a></li><li><a href="../examples/scenario.html">案例底稿：從 B0 到 B1</a></li><li><a href="../guides/chapter-01.html">第一章　Agent 基礎理論</a></li><li><a href="context-knowledge-tools.html">T02｜把正確的規格帶進本輪 Context</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T03｜用同一項修復比較工作環境｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T03｜用同一項修復比較工作環境</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 認識檔案與 Git 差異。要比較哪種入口便於定位篩選錯誤，先固定同一基準、需求及驗收。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【公開技術文件】 產品入口按本地摘要查閱 2026-11-21；瀏覽器文件 P07 於 2026-11-22 查核。VS Code 主視窗的 Codex 擴充配合直接編輯；Agents Window 依 session 查看 Files、Changes、Browser，可按條件開 New Worktree；Dev Container 有限制。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 比較表欄位：入口／平台／harness／權限 → 目前 repo、branch、worktree → 如何看 diff 與工具輸出 → 整合方式 → 人工追問或切換次數。欄位未知填未測。</p>
+<ol>
+<li>
+<p>【合成教學案例】 需要人機同步看程式時，試用 VS Code 主視窗或 Antigravity Editor。需要非同步觀察數個工作區時，查 Agents Window 的 session 或 Google 發表時的 Manager Surface 與 Artifacts。核對模型及方案，不用介面名稱推定模型能力。</p>
+</li>
+<li>
+<p>【合成教學案例】 桌面環境先分辨 ChatGPT 的 Chat／Work 與獨立 Codex 視圖；Codex app 有專案 threads、diff 與 worktree。Orca 可從專案側欄辨認 worktree 與 Agent，持續監督另需核對實驗性 Orchestration。</p>
+</li>
+<li>
+<p>【合成教學案例】 每個入口各走一次相同演練：尋找 UI 檔、確認 Shell 的 cwd 與 branch、讀 diff，依專案命令啟動測試。用 Browser 點選 work，查 Console 例外、Network 請求與回應、擷取畫面並比對 fixture。缺少 Network 工具時改由獲准的人員看 DevTools 或服務記錄。</p>
+</li>
+<li>
+<p>【合成教學案例】 記錄開工作區、看產物、恢復中斷及確認整合的人工作業；不同模型、登入或權限須分欄，無法控制的條件保留未知。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【個人直接觀點】 U07／S01 描述使用者偏好 Orca 的專案可見性；【證據待補】 沒有固定版本、同任務跨工具跑分。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 若 A 的截圖正確、B 的工具能顯示 HTTP 回應，哪一個已證明篩選正確？</p>
+<p>判斷依據：兩者各有觀察邊界；先確認請求、fixture 與顯示結果一致，再談維護和人工監督成本。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/scenario.html">案例工作紙</a> · <a href="../concepts/tool-management.html">工具比較與工程環境選擇</a> · <a href="../concepts/worktree.html">Git Worktree 與工作隔離</a> · <a href="../concepts/single-agent.html">單 Agent 開發流程</a></p>
+<p>來源：<a href="../sources/p06-summary.html">P06</a>、<a href="../sources/p07-summary.html">P07</a>、<a href="../sources/p08-summary.html">P08</a>、<a href="../sources/p10-summary.html">P10</a>、<a href="../sources/p12-summary.html">P12</a>、<a href="../sources/p13-summary.html">P13</a>、<a href="../sources/p24-summary.html">P24</a>、<a href="../sources/p25-summary.html">P25</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">S01（來源回執）</a>。</p>
+<p><a href="context-knowledge-tools.html">上個單元</a> <a href="single-agent-coding-cycle.html">下個單元</a></p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/74">第2章 · 單 Agent 開發</a></p><h2>引用此頁的文章</h2><ul><li><a href="../concepts/single-agent.html">單 Agent 開發流程</a></li><li><a href="../concepts/tool-management.html">工具比較與工程環境選擇</a></li><li><a href="../concepts/worktree.html">Git Worktree 與工作隔離</a></li><li><a href="../examples/scenario.html">案例底稿：從 B0 到 B1</a></li><li><a href="../guides/chapter-02.html">第二章　單 Agent 軟體工程實務</a></li><li><a href="context-knowledge-tools.html">T02｜把正確的規格帶進本輪 Context</a></li><li><a href="single-agent-coding-cycle.html">T04｜一次修完標籤篩選：從需求到交付</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

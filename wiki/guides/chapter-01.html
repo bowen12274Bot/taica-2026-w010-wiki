@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>第一章　Agent 基礎理論｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　章節導覽</p><h1>第一章　Agent 基礎理論</h1><div class="layout"><article><div><h2 id="section-1">主要教學路徑</h2>
+<p>【教學編排】 先依下列單元完成練習，再查單元所連的概念與來源摘要，核對判斷依據。</p>
+<ol>
+<li><a href="../tutorials/agent-system-model.html">誰決定下一步？從模型輸出追到停止條件</a> → <a href="../concepts/agent-workflow.html">概念</a> → <a href="../sources/p01-summary.html">來源 P01</a></li>
+<li><a href="../tutorials/context-knowledge-tools.html">把正確的規格帶進本輪 Context</a> → <a href="../concepts/context-tools.html">概念</a> → <a href="../sources/p03-summary.html">來源 P03</a></li>
+</ol>
+<h2 id="section-2">本章學習目標</h2>
+<p>辨認誰決定下一步，並能追蹤一次從模型輸出到工具觀察的循環。</p>
+<h2 id="section-3">建議閱讀順序</h2>
+<ol>
+<li><a href="../concepts/agent-workflow.html">Agent 與 Workflow</a></li>
+<li><a href="../concepts/agent-loop.html">Agent Loop 與工具呼叫</a></li>
+<li><a href="../concepts/context-tools.html">Context、Skills 與 MCP</a></li>
+</ol>
+<p>公開技術來源：<a href="../sources/p01-summary.html">P01</a>、<a href="../sources/p02-summary.html">P02</a>、<a href="../sources/p03-summary.html">P03</a>。</p>
+<p>個人研究：<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<h2 id="section-4">教學重點</h2>
+<p>從同一個聊天介面畫出兩條執行路徑：直接回答，以及先查工具、依觀察再決定。請讀者指出停止點。</p>
+<h2 id="section-5">解讀限制</h2>
+<p>SDK 允許直接輸出結果；個人五層框架屬教學整理。</p>
+<h2 id="section-6">延伸練習</h2>
+<p>進入實作前，先區分模型本輪可見的 Context 與有版本的專案狀態。用<a href="../concepts/supervision.html">分層回報範例</a>判斷哪些資訊要跨工作階段保存。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/12">第1章 · Agent 基礎</a></p></footer></article><aside><strong>本頁內容</strong><a href="#section-1">主要教學路徑</a><a href="#section-2">本章學習目標</a><a href="#section-3">建議閱讀順序</a><a href="#section-4">教學重點</a><a href="#section-5">解讀限制</a><a href="#section-6">延伸練習</a></aside></div></main></body></html>

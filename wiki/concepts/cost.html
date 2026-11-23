@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>工程效率與資源成本｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>工程效率與資源成本</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>要比較架構，先固定需求、起始版本、環境與品質門檻，分開觀察經過時間、人工介入、運算資源與重試。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P20 用可重複資料集及準則比較流程。U07 【個人直接觀點】 關心實際交付及目標效益。建議將等待、整合與失敗嘗試保留在紀錄中；多個 Worker 的工時相加無法代表牆鐘時間。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>U10 【證據待補】 原時間公式與前提未取得。Dungeon Lab 只有功能測試；多 Agent 是否更快仍是 【待驗證假設】。需在相同門檻下重複對照，才能對相應任務範圍下結論。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="quality.html">工程品質與驗證</a>、<a href="task-graph.html">Task DAG 與動態調度</a>、<a href="role-design.html">專案架構、角色與 Agent 數量</a>。</p>
+<p>來源：<a href="../sources/p20-summary.html">P20</a>、<a href="../sources/p01-summary.html">P01</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-C（來源回執）</a>。</p>
+<p>本頁研討題：現有資料能否證明某種多 Agent 架構一定比單 Agent 更有效率？</p>
+<h2 id="section-5">何時將一次經驗提升為長期資產</h2>
+<p>【教學編排】 第一次成功先保留任務、環境及結果。再次遇到相同問題，找出穩定前提與反例，再選資產形式：專案約束進 AGENTS.md；可重複操作寫成 Skill；固定交付資訊做成模板；架構選擇與取捨寫決策紀錄；可判定的錯誤加入回歸測試。一次 Prompt 可能依賴當時上下文、版本或權限，無法直接推論可泛用。</p>
+<p>例：第二次遇到同一交接遺漏，先試用含基準 commit 與測試結果的模板。於另一任務核對能否查回產物，再指定維護者、適用範圍及版本；工具改版後重驗，無效或衝突時修訂、降級或淘汰。模組規則留在模組，可以跨專案重現的做法才提升至共用層。</p>
+<p>【公開技術文件】 P05 支持專案規範，P17 支持將可執行約束留在 repository。U09 【歷史研究整理】 反映保留私人管理資產的方向。【待驗證假設】 效益應在相近需求及品質門檻下比較重用率、首次成功率、人工介入、返工與維護時間；固定節省幅度尚無量化證據，U10 原式仍缺。</p>
+<p>來源：<a href="../../docs/phase2b-final/assignment/index.html#receipts">S05（來源回執）</a>、<a href="../sources/p05-summary.html">P05</a>、<a href="../sources/p17-summary.html">P17</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/verification-efficiency-reuse.html">品質達標後，怎樣比較工程成本？</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/309">第5章 · 品質與效率驗證</a></p><h2>引用此頁的文章</h2><ul><li><a href="quality.html">工程品質與驗證</a></li><li><a href="role-design.html">專案架構、角色與 Agent 數量</a></li><li><a href="task-graph.html">Task DAG 與動態調度</a></li><li><a href="../guides/chapter-02.html">第二章　單 Agent 軟體工程實務</a></li><li><a href="../guides/chapter-05.html">第五章　多 Agent 工程品質與效率驗證</a></li><li><a href="../tutorials/verification-efficiency-reuse.html">T09｜品質達標後，怎樣比較工程成本？</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a><a href="#section-5">何時將一次經驗提升為長期資產</a></aside></div></main></body></html>

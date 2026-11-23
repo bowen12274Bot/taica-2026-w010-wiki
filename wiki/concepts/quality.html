@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>工程品質與驗證｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>工程品質與驗證</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>把需求轉成可觀察的產品行為，並分別留下架構、單元、整合與交付證據。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P17 示範架構規則自動化，P20 從 trace 找出工作流程失敗。U07 【個人直接觀點】 主張把人工審查集中到高風險變更、未測路徑與實際產品驗收。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>U05、U06 【原版本測試紀錄】 原專案紀錄分別報告 8/8、12/12 單元測試，後者另有 58 項整合檢查。這能支持所列版本與測項；測試以外的行為仍須另驗，且產品通過與交付過程順利須分開衡量。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="harness.html">規格與 Harness Engineering</a>、<a href="cost.html">工程效率與資源成本</a>、<a href="supervision.html">工作監督、回報與交接</a>。</p>
+<p>來源：<a href="../sources/p17-summary.html">P17</a>、<a href="../sources/p20-summary.html">P20</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-C（來源回執）</a>。</p>
+<p>本頁研討題：人類不逐行審查程式碼時，如何建立工程驗證？</p>
+<h2 id="section-5">從完成聲明到可驗收的證據鏈</h2>
+<p>【教學編排】 依序問五個問題：① 誰回報完成，對應哪個 Task／Dispatch？② 哪個 diff 或 commit 證明產物存在？③ 哪個環境、版本、命令與輸出支持測項通過？④ 哪個整合 commit 在權威基線重跑了介面及回歸檢查？⑤ 哪位具授權者按哪條需求驗收，留下哪些例外？前一級的證據無法代替下一級。</p>
+<p>例如 Worker 的測試全綠，但整合分支改過 API：先留存原測試及 diff，Integrator 在目標提交重跑跨模組案例，再請有權者確認可見行為。回報需列實際失敗、未測情境、重現方法及責任人。【公開技術文件】 P28 的 trace／span 可定位模型、工具和交接事件；P20 的評估準則幫助判讀行為。工具呼叫成功只回答它是否執行，功能正確仍須驗證。</p>
+<p>U07 【個人直接觀點】 主張人工集中審核高風險變更、架構例外及測試未覆蓋處；U05/U06 【原始工程紀錄】 的 Dungeon Lab 結果限於原專案測項。</p>
+<p>來源：<a href="../../docs/phase2b-final/assignment/index.html#receipts">S04（來源回執）</a>、<a href="../sources/p28-summary.html">P28</a>。</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/single-agent-coding-cycle.html">一次修完標籤篩選：從需求到交付</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/309">第5章 · 品質與效率驗證</a></p><h2>引用此頁的文章</h2><ul><li><a href="agent-loop.html">Agent Loop 與工具呼叫</a></li><li><a href="conflict.html">Agent 工作衝突與整合</a></li><li><a href="cost.html">工程效率與資源成本</a></li><li><a href="harness.html">規格與 Harness Engineering</a></li><li><a href="single-agent.html">單 Agent 開發流程</a></li><li><a href="../guides/chapter-02.html">第二章　單 Agent 軟體工程實務</a></li><li><a href="../guides/chapter-04.html">第四章　多 Agent 實務與工程決策</a></li><li><a href="../guides/chapter-05.html">第五章　多 Agent 工程品質與效率驗證</a></li><li><a href="../tutorials/single-agent-coding-cycle.html">T04｜一次修完標籤篩選：從需求到交付</a></li><li><a href="../tutorials/uncertainty-conflict-governance.html">T07｜兩邊測試都通過，究竟採用哪個版本？</a></li><li><a href="../tutorials/verification-efficiency-reuse.html">T09｜品質達標後，怎樣比較工程成本？</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a><a href="#section-5">從完成聲明到可驗收的證據鏈</a></aside></div></main></body></html>

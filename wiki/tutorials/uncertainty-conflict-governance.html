@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T07｜兩邊測試都通過，究竟採用哪個版本？｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T07｜兩邊測試都通過，究竟採用哪個版本？</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 認識工作票與整合基線。需求文字可能很精確，卻沒有回答產品行為上的選擇。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【個人直接觀點】 U07 主張改變已授權需求或架構時回交決策者。【公開技術文件】 P14 說明檔案隔離，P17 提供架構檢查案例。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 意圖『找相關待辦』→ 文件『支援兩個標籤』→ 程式可能寫交集或聯集 → 同一資料得到不同清單。先讓人看得見差異，再決定。</p>
+<ol>
+<li>
+<p>【合成教學案例】 從 B1 取反例：A 只有 work、B 只有 home。選兩者時 AND 回空，OR 回 A/B。把兩種預期結果提供給人類，比追加一段形容詞更容易確認。</p>
+</li>
+<li>
+<p>【合成教學案例】 核准後將選定結果寫成契約測試，如 OR 的 expected_ids=[A,B]，另外測單標籤相容性。任何分支即使自測通過，也要重跑相同契約。</p>
+</li>
+<li>
+<p>【合成教學案例】 授權矩陣：Worker 可修既有契約內的程式；Coordinator 可在有效契約內重排；Integrator 可處理不改行為的合併；改產品語義或架構要人類批准。涉及權限、資料遷移或未測相容性時做針對性程式審查。</p>
+</li>
+<li>
+<p>【合成教學案例】 若語義衝突會污染大量下游，先暫停、保留兩分支並重排；若分支已接近完成且可逆，可保留兩個可比較產物，再由有權者裁決。估算重作範圍與決策成本，不以 merge 順序決定產品方向。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【教學編排】 此授權矩陣只適用案例；其他專案先查自身授權與權威分支。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 兩位 Worker 沒改到同一行，是否可以略過決策？</p>
+<p>判斷依據：用 A/B 反例驗證可見行為。若結果互斥，仍是產品決策；保留兩者差異與批准記錄。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/decision-cases.html">案例工作紙</a> · <a href="../concepts/authority.html">需求邊界與人類授權</a> · <a href="../concepts/conflict.html">Agent 工作衝突與整合</a> · <a href="../concepts/worktree.html">Git Worktree 與工作隔離</a> · <a href="../concepts/quality.html">工程品質與驗證</a></p>
+<p>來源：<a href="../sources/p14-summary.html">P14</a>、<a href="../sources/p17-summary.html">P17</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">S04（來源回執）</a>。</p>
+<p><a href="requirements-to-delivery.html">上個單元</a> <a href="scheduling-supervision-handoff.html">下個單元</a></p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/262">第4章 · 工程實務決策</a></p><h2>引用此頁的文章</h2><ul><li><a href="../concepts/conflict.html">Agent 工作衝突與整合</a></li><li><a href="../examples/decision-cases.html">決策演練：歧義、互斥版本與阻塞</a></li><li><a href="../guides/chapter-04.html">第四章　多 Agent 實務與工程決策</a></li><li><a href="requirements-to-delivery.html">T06｜讓第二項需求接上同一個專案</a></li><li><a href="scheduling-supervision-handoff.html">T08｜失聯的工作票如何安全接手</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>第四章　多 Agent 實務與工程決策｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　章節導覽</p><h1>第四章　多 Agent 實務與工程決策</h1><div class="layout"><article><div><h2 id="section-1">主要教學路徑</h2>
+<p>【教學編排】 先依下列單元完成練習，再查單元所連的概念與來源摘要，核對判斷依據。</p>
+<ol>
+<li><a href="../tutorials/uncertainty-conflict-governance.html">兩邊測試都通過，究竟採用哪個版本？</a> → <a href="../concepts/authority.html">概念</a> → <a href="../sources/p14-summary.html">來源 P14</a></li>
+<li><a href="../tutorials/scheduling-supervision-handoff.html">失聯的工作票如何安全接手</a> → <a href="../concepts/supervision.html">概念</a> → <a href="../sources/p13-summary.html">來源 P13</a></li>
+</ol>
+<h2 id="section-2">本章學習目標</h2>
+<p>區分可繼續的獨立工作與需要有權者裁決的衝突。</p>
+<h2 id="section-3">建議閱讀順序</h2>
+<ol>
+<li><a href="../concepts/authority.html">需求邊界與人類授權</a></li>
+<li><a href="../concepts/conflict.html">Agent 工作衝突與整合</a></li>
+<li><a href="../concepts/task-graph.html">Task DAG 與動態調度</a></li>
+<li><a href="../concepts/supervision.html">工作監督、回報與交接</a></li>
+</ol>
+<p>公開技術來源：<a href="../sources/p05-summary.html">P05</a>、<a href="../sources/p13-summary.html">P13</a>、<a href="../sources/p14-summary.html">P14</a>、<a href="../sources/p17-summary.html">P17</a>。</p>
+<p>個人研究：<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<h2 id="section-4">教學重點</h2>
+<p>模擬介面變更造成的阻塞：先找出受影響任務，再比較等待、替代工作及中斷交接的代價。</p>
+<h2 id="section-5">解讀限制</h2>
+<p>失聯不足以判定失敗；跨專案切換取決於授權和可恢復狀態。</p>
+<h2 id="section-6">延伸練習</h2>
+<p>遇到 Worker 回報完成但缺整合證據時，沿<a href="../concepts/supervision.html">分層交接</a>找責任人，依<a href="../concepts/quality.html">證據鏈</a>確認應補驗的版本與測項。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/262">第4章 · 工程實務決策</a></p></footer></article><aside><strong>本頁內容</strong><a href="#section-1">主要教學路徑</a><a href="#section-2">本章學習目標</a><a href="#section-3">建議閱讀順序</a><a href="#section-4">教學重點</a><a href="#section-5">解讀限制</a><a href="#section-6">延伸練習</a></aside></div></main></body></html>

@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>決策演練：歧義、互斥版本與阻塞｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　案例工作紙</p><h1>決策演練：歧義、互斥版本與阻塞</h1><div class="layout"><article><p class="note">合成情境，供練習工程判斷。</p><div><p>【合成教學案例】 以下均為決策分支，沒有觀測到的最佳策略。</p>
+<div class="table" tabindex="0" role="region" aria-label="工作表，可左右捲動"><table>
+<thead>
+<tr>
+<th>事件與診斷</th>
+<th>選項一及代價</th>
+<th>選項二及代價</th>
+<th>誰決定／如何恢復</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求二說多標籤，A/B 資料在 AND 與 OR 下不同</td>
+<td>先暫停行為變更，等產品決定；有等待成本</td>
+<td>做兩種唯讀原型供比較；多一次實作</td>
+<td>人類選語義；把反例加入新契約</td>
+</tr>
+<tr>
+<td>API 端空字串解為全部，UI 端當無結果；Git 可乾淨合併</td>
+<td>凍結相依票，早裁決、減少返工</td>
+<td>保留兩分支完成可獨立測項，整合時比較；可能重做</td>
+<td>Integrator 列差異，人類確認可見行為；在 main 目標重測</td>
+</tr>
+<tr>
+<td>F2 等上游，Worker 最後活動不明</td>
+<td>查有效嘗試並等下一個明確事件；保留連續性</td>
+<td>先做無依賴測例或已授權的其他專案；有切換成本</td>
+<td>Coordinator 核對原責任人、base、最後證據；需要改規格時升級</td>
+</tr>
+</tbody>
+</table>
+</div><p>練習：將每個選項分成可逆修改與會改變產品行為的決定；後者需要明確授權。</p>
+<p>教學入口：<a href="../tutorials/uncertainty-conflict-governance.html">T07</a>、<a href="../tutorials/scheduling-supervision-handoff.html">T08</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/262">第4章 · 工程實務決策</a></p><h2>引用此頁的文章</h2><ul><li><a href="../tutorials/uncertainty-conflict-governance.html">T07｜兩邊測試都通過，究竟採用哪個版本？</a></li></ul></footer></article></div></main></body></html>

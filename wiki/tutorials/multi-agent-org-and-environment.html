@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T05｜先畫責任與工作區，再決定開幾個 Agent｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T05｜先畫責任與工作區，再決定開幾個 Agent</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 能描述 B0 的 API 與畫面。若兩人同時改同一個尚未定案的欄位，即使有兩套工作目錄也可能一起返工。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【公開技術文件】 P14 的 worktree 共享 repo 物件及多數 refs，保有各自檢出與 index。P15 討論人類團隊，將其映射至 Agent 是 【工程設計】。U07 【個人直接觀點】 先定責任和環境，再按需求派工。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 Human 核准目的與介面 → Coordinator 管依賴與所有者 → API/UI Worker 各交局部變更 → Reviewer 查契約 → Integrator 在目標基線驗證 → Human 接受。</p>
+<ol>
+<li>
+<p>【合成教學案例】 列出固定項：repo todos、起始 B0、權威分支 main。從 B0 為 API 與 UI 各開分支及 worktree；兩個 session 的 cwd 和基準各自記錄。共享服務、埠與測試資料仍需安排。</p>
+</li>
+<li>
+<p>【合成教學案例】 先看介面是否穩定。未定時由一個責任人釐清；規格明確且 fixture 已凍結，API 與 UI 可並行。若兩票共改資料結構，先串行處理契約。</p>
+</li>
+<li>
+<p>【合成教學案例】 評估可同時驗收的工作數、交接次數、合併與重跑代價。小變更可由一位 Agent 兼 Worker 與 Integrator；高風險改動另設 Reviewer。角色可長期沿用，session 可結束。</p>
+</li>
+<li>
+<p>【合成教學案例】 以 DAG 標明哪些節點可開始；Integrating 之前核對兩份 commit 的共同祖先與契約版本。只有通過整合並獲准，才把新基線記為 B1。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【證據待補】 無通用最佳人數，亦缺使用者完整自主組織 trace。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 UI 與 API 都在等同一個欄位定義，再多一個 Worker 有幫助嗎？</p>
+<p>判斷依據：先解除共享依賴；只有可獨立完成且有驗收輸出的工作，才可能抵銷協調成本。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/task-dag.html">案例工作紙</a> · <a href="../concepts/role-design.html">專案架構、角色與 Agent 數量</a> · <a href="../concepts/worktree.html">Git Worktree 與工作隔離</a> · <a href="../concepts/task-graph.html">Task DAG 與動態調度</a></p>
+<p>來源：<a href="../sources/p01-summary.html">P01</a>、<a href="../sources/p14-summary.html">P14</a>、<a href="../sources/p15-summary.html">P15</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">S02（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<p><a href="single-agent-coding-cycle.html">上個單元</a> <a href="requirements-to-delivery.html">下個單元</a></p>
+<p>【合成教學案例】 若 API Worker 打算把 tags 的型別從字串陣列換成物件陣列，UI Worker 的既有 fixture 就失效。先讓 F0 決定是否允許改型別、誰遷移資料；核准前以現行契約做可逆工作，核准後兩邊改用同一版 fixture 再拆票。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="../concepts/role-design.html">專案架構、角色與 Agent 數量</a></li><li><a href="../concepts/task-graph.html">Task DAG 與動態調度</a></li><li><a href="../examples/task-dag.html">依賴圖：哪些工作可以先開始？</a></li><li><a href="../examples/task-spec.html">工作票：契約、API、畫面與整合</a></li><li><a href="../guides/chapter-03.html">第三章　多 Agent 軟體工程架構</a></li><li><a href="requirements-to-delivery.html">T06｜讓第二項需求接上同一個專案</a></li><li><a href="single-agent-coding-cycle.html">T04｜一次修完標籤篩選：從需求到交付</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

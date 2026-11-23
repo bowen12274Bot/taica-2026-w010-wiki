@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>專案架構、角色與 Agent 數量｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>專案架構、角色與 Agent 數量</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>角色是對工程結果負責的職責。先辨認模組的輸入、輸出及驗收責任，再決定同時需要幾個執行者。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P15 討論人類團隊的工作流和互動成本；P01 說明可獨立執行的工作如何拆分。U07 【個人直接觀點】、U08 【工程設計】 將軟體團隊角色用於 Agent 配置。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>若前後端共用的介面仍在變動，應先處理契約；兩個獨立模組各有測試時才有並行空間。最佳數量缺實測，需連同交接及整合成本考量。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="task-graph.html">Task DAG 與動態調度</a>、<a href="coordination.html">Coordinator、Worker 與 Integrator</a>、<a href="cost.html">工程效率與資源成本</a>。</p>
+<p>來源：<a href="../sources/p15-summary.html">P15</a>、<a href="../sources/p01-summary.html">P01</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<p>本頁研討題：如何根據專案架構決定 Agent 角色與數量？</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/multi-agent-org-and-environment.html">先畫責任與工作區，再決定開幾個 Agent</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="cost.html">工程效率與資源成本</a></li><li><a href="../guides/chapter-03.html">第三章　多 Agent 軟體工程架構</a></li><li><a href="../tutorials/multi-agent-org-and-environment.html">T05｜先畫責任與工作區，再決定開幾個 Agent</a></li><li><a href="../tutorials/requirements-to-delivery.html">T06｜讓第二項需求接上同一個專案</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a></aside></div></main></body></html>

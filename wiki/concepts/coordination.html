@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Coordinator、Worker 與 Integrator｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>Coordinator、Worker 與 Integrator</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>Coordinator 對任務拆解、委派和追蹤負責；Worker 交付指定改動；Integrator 對基線上的整合結果負責。這些責任可由同一人或 Agent 兼任。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P13 以 Run 收集訊息，Task 記錄規格與依賴，Dispatch 識別一次嘗試。派工寫明責任、工作區、基準、產物與驗收；完成訊息應對上有效的 Task 和 Dispatch，再檢查產物。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>U03、U07 【工程設計】 將角色串成工程流程。Worker 成功回報後仍可能整合失敗；Run 不會自行派工。Orca 文件標註 Experimental，尚缺個人全程自動運作 trace。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="task-graph.html">Task DAG 與動態調度</a>、<a href="worktree.html">Git Worktree 與工作隔離</a>、<a href="supervision.html">工作監督、回報與交接</a>。</p>
+<p>來源：<a href="../sources/p13-summary.html">P13</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<p>本頁研討題：Coordinator 如何派發與追蹤任務？</p>
+<h2 id="section-5">從組織初始化到下一輪需求</h2>
+<p>U07 【個人直接觀點】 將初始化與接案分開。Project 保存產品、架構與權威基線；Role 指一組責任和決策權，可跨需求重用。Task 是有目標、依賴與驗收條件的工作；Dispatch 是對該 Task 的一次派工嘗試。Session 承載互動狀態，Worktree 隔離檔案；結束 session 或保留工作目錄都不能單獨證明任務完成。</p>
+<p>【教學編排】 第一次先定義角色、權限、工作區與整合基準。每個新需求再走一次下列循環：</p>
+<ol>
+<li>PROPOSED → READY：具權者確認範圍、依賴、基準與驗收；欠缺輸入時先釐清。</li>
+<li>RUNNING：登記 Task、有效 Dispatch 和責任人。遇授權或依賴阻塞轉 BLOCKED，解阻後恢復或建立新嘗試。</li>
+<li>REVIEW：Worker 交產物與測試，Integrator 在目標基線整合、記錄 commit 並重跑；失敗則退回修正。</li>
+<li>ACCEPTED → CLOSED：具權者認可結果，更新權威版本，移交未竟事項再清理工作區。收到第二項需求可沿用角色、規範與新基線；依賴或授權改變時再調整人力。Session 可復用或退出。</li>
+</ol>
+<p>[P16] 【公開技術文件】 manager 可保留控制並呼叫專家；handoff 則移交本輪控制。P13 的 Run／Task／Dispatch 與上述教學狀態機分屬不同層次。多視窗並行只表明有人在執行。U03 的完整持續自主監督 【證據待補】 仍缺跨派工、阻塞、恢復到整合驗收的端到端證據。</p>
+<p>來源：<a href="../../docs/phase2b-final/assignment/index.html#receipts">S02（來源回執）</a>、<a href="../sources/p12-summary.html">P12</a>、<a href="../sources/p16-summary.html">P16</a>。</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/requirements-to-delivery.html">讓第二項需求接上同一個專案</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="role-design.html">專案架構、角色與 Agent 數量</a></li><li><a href="supervision.html">工作監督、回報與交接</a></li><li><a href="task-graph.html">Task DAG 與動態調度</a></li><li><a href="tool-management.html">工具比較與工程環境選擇</a></li><li><a href="worktree.html">Git Worktree 與工作隔離</a></li><li><a href="../guides/chapter-03.html">第三章　多 Agent 軟體工程架構</a></li><li><a href="../tutorials/requirements-to-delivery.html">T06｜讓第二項需求接上同一個專案</a></li><li><a href="../tutorials/scheduling-supervision-handoff.html">T08｜失聯的工作票如何安全接手</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a><a href="#section-5">從組織初始化到下一輪需求</a></aside></div></main></body></html>

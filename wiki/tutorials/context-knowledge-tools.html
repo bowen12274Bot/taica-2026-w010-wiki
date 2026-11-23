@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T02｜把正確的規格帶進本輪 Context｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T02｜把正確的規格帶進本輪 Context</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 懂得模型只看到本輪輸入。接手另一個人的篩選任務，先找出現行契約，再決定怎樣查它。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【公開技術文件】 P30：檢索系統以問題為輸入，選出有權讀取的相關片段供生成使用。P04 描述 Skill 的發現及載入，P03 描述 MCP client 與 server 的工具或資源；P05 讓專案指引有可預期的位置。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 提問「未帶 tag？」→ 限定本專案與可讀版本 → 搜尋介面文件 → 核對版本與段落 → 將短摘錄及定位加入 Context → 依契約回答。沒有相關段落就標待決。</p>
+<ol>
+<li>
+<p>【合成教學案例】 先讀 repo 的 AGENTS.md，取得工作範圍與測試命令；把 B0 和有效 Task 寫成當輪輸入，以免採用舊草稿。</p>
+</li>
+<li>
+<p>【合成教學案例】 若文件很多，用 RAG 找候選段落，再用 Project State 所列核准版本查驗。若只有一份短文件，可直接讀檔，省去檢索步驟。</p>
+</li>
+<li>
+<p>【合成教學案例】 需要一致的瀏覽器驗收步驟時才載入 Skill；需要跨工具讀取記錄時才透過已授權 MCP 資源。沒有 MCP 時，本機測試和人工查閱也能交付證據。</p>
+</li>
+<li>
+<p>【合成教學案例】 換 session 時從共享狀態重新組 Context。Memory 可保存跨任務的知識；Project State 表示當前權威基準及決策；Task State 表示本票的嘗試與阻塞。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【工程設計】 S03 的分層摘要需保留原件位置。檢索命中舊版「空字串代表全部」時，不能把相似度當成核准紀錄。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 同時找到過期草案和現行規格，哪個片段應送進模型？</p>
+<p>判斷依據：查版本、批准人及適用範圍；若無法確認，保留衝突交裁決。Skill 可指導如何查，工具授權須獨立核對。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/scenario.html">案例工作紙</a> · <a href="../concepts/context-tools.html">Context、Skills 與 MCP</a> · <a href="../concepts/supervision.html">工作監督、回報與交接</a> · <a href="../concepts/harness.html">規格與 Harness Engineering</a></p>
+<p>來源：<a href="../sources/p03-summary.html">P03</a>、<a href="../sources/p04-summary.html">P04</a>、<a href="../sources/p05-summary.html">P05</a>、<a href="../sources/p30-summary.html">P30</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">S03（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<p><a href="agent-system-model.html">上個單元</a> <a href="coding-agent-tool-selection.html">下個單元</a></p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/12">第1章 · Agent 基礎</a></p><h2>引用此頁的文章</h2><ul><li><a href="../concepts/context-tools.html">Context、Skills 與 MCP</a></li><li><a href="../concepts/supervision.html">工作監督、回報與交接</a></li><li><a href="../examples/scenario.html">案例底稿：從 B0 到 B1</a></li><li><a href="../guides/chapter-01.html">第一章　Agent 基礎理論</a></li><li><a href="agent-system-model.html">T01｜誰決定下一步？從模型輸出追到停止條件</a></li><li><a href="coding-agent-tool-selection.html">T03｜用同一項修復比較工作環境</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

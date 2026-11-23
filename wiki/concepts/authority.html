@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>需求邊界與人類授權｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>需求邊界與人類授權</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>文件可列出目標、禁止範圍與驗收範例，但產品語意仍可能留下多個合理實作。授權界定誰能選擇以及何時必須停下。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>U07 【個人直接觀點】 指出未描述的細節可能被 Agent 補完。U04 【工程設計】 以規格與停止條件約束行動。【公開技術文件】 P05、P17 分別提供專案指引和架構檢查的實例。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>例如『重複資料需處理』尚未決定拒收或覆蓋。若選擇改變使用者可見結果，列出選項、影響與待決者；核准後把案例加入驗收。可逆且已授權的實作細節仍可由執行者選擇。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="harness.html">規格與 Harness Engineering</a>、<a href="conflict.html">Agent 工作衝突與整合</a>、<a href="supervision.html">工作監督、回報與交接</a>。</p>
+<p>來源：<a href="../sources/p05-summary.html">P05</a>、<a href="../sources/p17-summary.html">P17</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<p>本頁研討題：為什麼詳細的需求文件仍無法完全避免 AI 自行定義實作？</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/agent-system-model.html">誰決定下一步？從模型輸出追到停止條件</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/262">第4章 · 工程實務決策</a></p><h2>引用此頁的文章</h2><ul><li><a href="conflict.html">Agent 工作衝突與整合</a></li><li><a href="harness.html">規格與 Harness Engineering</a></li><li><a href="single-agent.html">單 Agent 開發流程</a></li><li><a href="supervision.html">工作監督、回報與交接</a></li><li><a href="../guides/chapter-04.html">第四章　多 Agent 實務與工程決策</a></li><li><a href="../tutorials/agent-system-model.html">T01｜誰決定下一步？從模型輸出追到停止條件</a></li><li><a href="../tutorials/uncertainty-conflict-governance.html">T07｜兩邊測試都通過，究竟採用哪個版本？</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a></aside></div></main></body></html>

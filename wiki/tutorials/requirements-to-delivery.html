@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T06｜讓第二項需求接上同一個專案｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T06｜讓第二項需求接上同一個專案</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 讀過角色及 B0 基線。要將一個需求交給數個執行者，你必須讓下游在不用猜介面的情況下開始工作。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【公開技術文件】 P13（Orca 文件查閱 2026-11-21，Experimental）區分 Run、Task、Dispatch。P16 manager 保有主控並呼叫專家；handoff 把控制權交給接手者。Sequential／Parallel 說明時序，與誰最終回覆分開選。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 需求一 → F0 契約 → {F1 API ∥ F2 UI} → F3 整合 → 接受 B1 → 需求二 → 新契約與工作票。任何節點缺輸入可轉 BLOCKED；驗證失敗退回相應票。</p>
+<ol>
+<li>
+<p>【合成教學案例】 人類確認樣例與相容性；F0 寫下參數 tag、回傳 ID 與省略條件的行為。這份契約和 fixture 讓前後端可各自測，不必等對方完成才開始。</p>
+</li>
+<li>
+<p>【合成教學案例】 依工作票標出 owner、base、依賴及輸出。人工可直接指定工作區；Coordinator 也可在授權內挑選 ready 票，記一次 dispatch，失敗再派時保留舊紀錄。</p>
+</li>
+<li>
+<p>【合成教學案例】 F1、F2 各回傳差異、測試及限制；Reviewer 查介面，Integrator 將兩份產物放回同一目標基線，依 F3 實際操作。發現行為落差時退回責任票；通過後由授權者更新 B1。</p>
+</li>
+<li>
+<p>【合成教學案例】 第二項需求「支援兩個標籤」重用 repo、角色、舊測試和 B1。AND／OR 尚未決定，先開新契約票；不沿用第一次派工的完成狀態。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【工程設計】 U03 與 S02 支持協調方案；這個兩輪 Graph 是示例，缺少全程自治的實際觀察。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 Worker 已完成 F1，能否立即開始 F3？若接手者直接對人類回覆，又是哪一種控制方式？</p>
+<p>判斷依據：F3 還需要 F2 和共同基準。接手者取得本輪主控屬 handoff；只向 Coordinator 交結果仍由 manager 綜合。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/task-spec.html">案例工作紙</a> · <a href="../concepts/coordination.html">Coordinator、Worker 與 Integrator</a> · <a href="../concepts/task-graph.html">Task DAG 與動態調度</a> · <a href="../concepts/role-design.html">專案架構、角色與 Agent 數量</a></p>
+<p>來源：<a href="../sources/p13-summary.html">P13</a>、<a href="../sources/p16-summary.html">P16</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">S02（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-A（來源回執）</a>。</p>
+<p><a href="multi-agent-org-and-environment.html">上個單元</a> <a href="uncertainty-conflict-governance.html">下個單元</a></p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="../concepts/coordination.html">Coordinator、Worker 與 Integrator</a></li><li><a href="../examples/task-dag.html">依賴圖：哪些工作可以先開始？</a></li><li><a href="../examples/task-spec.html">工作票：契約、API、畫面與整合</a></li><li><a href="../guides/chapter-03.html">第三章　多 Agent 軟體工程架構</a></li><li><a href="multi-agent-org-and-environment.html">T05｜先畫責任與工作區，再決定開幾個 Agent</a></li><li><a href="uncertainty-conflict-governance.html">T07｜兩邊測試都通過，究竟採用哪個版本？</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>T08｜失聯的工作票如何安全接手｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　教學</p><h1>T08｜失聯的工作票如何安全接手</h1><div class="layout"><article><div><h2 id="section-1">學習問題與先備</h2>
+<p>【教學編排】 能讀 Task、Dispatch 與版本定位。你收到一則「還沒好」；先問是哪次嘗試、最後確認了什麼。</p>
+<h2 id="section-2">技術與方法依據</h2>
+<p>【個人直接觀點】 U07 描述等待、改做獨立工作、跨專案或介入；【公開技術文件】 P13 提供可追蹤的派工及回報，P28 的 trace 可追查執行事件。</p>
+<h2 id="section-3">操作順序與資料流</h2>
+<p>【合成教學案例】 狀態不明 → 核對有效 Dispatch、最近回報與產物 → 有阻塞則標記原因／責任人 → 解除、換獨立票或升級 → 確認原嘗試狀態後才接手。</p>
+<ol>
+<li>
+<p>【合成教學案例】 F2 等規格時，查 Project State 的核准版本、Task State 的前置票、Trace 的最後事件；Memory 有舊設計，Context 只是會話當輪所見，兩者都不能推翻專案基線。</p>
+</li>
+<li>
+<p>【合成教學案例】 若負責人仍在核對且無獨立工作，可等候並約定下次檢查事件。若其他票只依賴 B0，可切換；若只有草案，先列測例但標假設。轉做其他專案前先留狀態、查授權與切換成本。</p>
+</li>
+<li>
+<p>【合成教學案例】 若卡在決策權或重複嘗試無新觀察，Coordinator 彙整替代案請人裁決。失聯時查分支與最後輸出，確認所有權再重派，避免兩次嘗試同寫。</p>
+</li>
+<li>
+<p>【合成教學案例】 Worker 交 base/diff/已測與未測；Coordinator 向上送風險與待決；Integrator 查合併後 commit 及回歸；Human 按目標批准或退回。每層摘要附原始位置與有效嘗試。</p>
+</li>
+</ol>
+<h2 id="section-4">適用範圍與反例</h2>
+<p>【證據待補】 沒有跨專案切換最優時間或固定逾時門檻；等待長度須配合依賴及風險。</p>
+<h2 id="section-5">自我驗收</h2>
+<p>【教學編排】 只有十分鐘沒有訊息，是否重開同票？</p>
+<p>判斷依據：先區分無心跳、已故障與等待批准。確認舊嘗試狀態、可恢復證據及所有權，再決定是否重派。</p>
+<h2 id="section-6">對照閱讀</h2>
+<p><a href="../examples/handoff-and-evidence.html">案例工作紙</a> · <a href="../concepts/supervision.html">工作監督、回報與交接</a> · <a href="../concepts/task-graph.html">Task DAG 與動態調度</a> · <a href="../concepts/coordination.html">Coordinator、Worker 與 Integrator</a></p>
+<p>來源：<a href="../sources/p13-summary.html">P13</a>、<a href="../sources/p28-summary.html">P28</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">S03（來源回執）</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<p><a href="uncertainty-conflict-governance.html">上個單元</a> <a href="verification-efficiency-reuse.html">下個單元</a></p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/262">第4章 · 工程實務決策</a></p><h2>引用此頁的文章</h2><ul><li><a href="../examples/decision-cases.html">決策演練：歧義、互斥版本與阻塞</a></li><li><a href="../examples/handoff-and-evidence.html">交付範本：從 Worker 回報到人類簽收</a></li><li><a href="../examples/task-dag.html">依賴圖：哪些工作可以先開始？</a></li><li><a href="../guides/chapter-04.html">第四章　多 Agent 實務與工程決策</a></li><li><a href="uncertainty-conflict-governance.html">T07｜兩邊測試都通過，究竟採用哪個版本？</a></li><li><a href="verification-efficiency-reuse.html">T09｜品質達標後，怎樣比較工程成本？</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">學習問題與先備</a><a href="#section-2">技術與方法依據</a><a href="#section-3">操作順序與資料流</a><a href="#section-4">適用範圍與反例</a><a href="#section-5">自我驗收</a><a href="#section-6">對照閱讀</a></aside></div></main></body></html>

@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Task DAG 與動態調度｜LLM Wiki</title><link rel="stylesheet" href="../wiki.css"><body><header class="mast"><b>多 Agent 軟體開發實踐指南</b><nav><a href="../index.html">知識目錄</a><a href="../../slides/book/index.html">HTML 簡報</a><a href="../../docs/phase2b-final/assignment/raw-evidence/index.html">執行證據</a><a href="../../index.html">作品首頁</a></nav></header><main><p class="kicker"><a href="../index.html">LLM Wiki 知識庫</a>　／　概念</p><h1>Task DAG 與動態調度</h1><div class="layout"><article><div><h2 id="section-1">定義</h2>
+<p>將任務畫成節點，依賴畫成有向邊。無環圖可辨認可先執行的工作；阻塞時，重新確認依賴是否仍有效。</p>
+<h2 id="section-2">原理與工程用途</h2>
+<p>【公開技術文件】 P13 的 Task 保存依賴與狀態。U07 【個人直接觀點】 提出等待、改做獨立任務、轉到另一個已授權專案、直接介入解除阻塞。選擇前先確認缺的是輸入、權限或上游決策。</p>
+<h2 id="section-3">適用條件與限制</h2>
+<p>例：API 未定案時，可先拿已同意的介面樣例準備測試，但應標示假設；若測試也依賴待決規則，就先停該路徑。跨專案切換需保存交接狀態，加速收益 【待驗證假設】。</p>
+<h2 id="section-4">延伸閱讀</h2>
+<p><a href="coordination.html">Coordinator、Worker 與 Integrator</a>、<a href="supervision.html">工作監督、回報與交接</a>、<a href="cost.html">工程效率與資源成本</a>。</p>
+<p>來源：<a href="../sources/p13-summary.html">P13</a>、<a href="../sources/p01-summary.html">P01</a>、<a href="../../docs/phase2b-final/assignment/index.html#receipts">U-B（來源回執）</a>。</p>
+<p>本頁研討題：前置 Agent 長時間阻塞時，有哪些可用策略？</p>
+<p>【教學編排】 對照操作案例：<a href="../tutorials/multi-agent-org-and-environment.html">先畫責任與工作區，再決定開幾個 Agent</a>。</p>
+</div><footer><h2>對照簡報</h2><p><a href="../../slides/book/index.html#deck/170">第3章 · 多 Agent 架構</a></p><h2>引用此頁的文章</h2><ul><li><a href="agent-workflow.html">Agent 與 Workflow</a></li><li><a href="coordination.html">Coordinator、Worker 與 Integrator</a></li><li><a href="cost.html">工程效率與資源成本</a></li><li><a href="role-design.html">專案架構、角色與 Agent 數量</a></li><li><a href="supervision.html">工作監督、回報與交接</a></li><li><a href="../guides/chapter-03.html">第三章　多 Agent 軟體工程架構</a></li><li><a href="../guides/chapter-04.html">第四章　多 Agent 實務與工程決策</a></li><li><a href="../tutorials/multi-agent-org-and-environment.html">T05｜先畫責任與工作區，再決定開幾個 Agent</a></li><li><a href="../tutorials/requirements-to-delivery.html">T06｜讓第二項需求接上同一個專案</a></li><li><a href="../tutorials/scheduling-supervision-handoff.html">T08｜失聯的工作票如何安全接手</a></li></ul></footer></article><aside><strong>本頁內容</strong><a href="#section-1">定義</a><a href="#section-2">原理與工程用途</a><a href="#section-3">適用條件與限制</a><a href="#section-4">延伸閱讀</a></aside></div></main></body></html>
