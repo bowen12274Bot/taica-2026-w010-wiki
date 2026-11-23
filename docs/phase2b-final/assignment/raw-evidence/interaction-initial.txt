@@ -1,0 +1,6 @@
+  "C31-d1-d2-d1": {
+    "late": "d1 的通過仍附 ui-a，歸入歷史紀錄。UI 格仍待補，F3 無法放行。",
+    "accepted": "d2 交 ui-b，局部測試顯示清除已省略 tag。重核 B0、K1、派工及局部證據，以 api-a + ui-b 重播故障，再做回歸與簽收。",
+    "lateControlActiveAfterD2": true,
+    "after": "d1 的通過仍附 ui-a，歸入歷史紀錄。UI 格仍待補，F3 無法放行。"
+  },

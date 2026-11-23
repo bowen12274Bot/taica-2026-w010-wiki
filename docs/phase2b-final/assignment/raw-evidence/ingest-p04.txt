@@ -1,0 +1,1 @@
+{"utc":"2026-11-21T16:05:08.908Z","sourcePath":"raw/public/p04.md","dryRun":false,"command":"ingest","api_version":"1","status":"success","pages_created":["sources/p04-summary.md"],"pages_updated":["index.md","log.md"],"dry_run":false}

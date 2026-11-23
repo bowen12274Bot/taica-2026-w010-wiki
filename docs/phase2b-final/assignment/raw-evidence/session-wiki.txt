@@ -1,0 +1,2 @@
+| VS Code Agents Window | 並列管理 session，在 Files／Changes／Browser 查看目前工作區，可選 Branch 或 New Worktree；整合後仍須重測。 | 記錄 active session、harness、權限。Dev Container 不提供 New Worktree。（P06） |
+| Orca | 專案側欄列出 worktree，可選起始 ref，對照工作區與 Agent 活動。需要監督時用 Run／Task／Dispatch 追蹤同一項工作的不同嘗試。 | 側欄父子層級只影響顯示；Orchestration 文件標 Experimental。（P12、P13） |

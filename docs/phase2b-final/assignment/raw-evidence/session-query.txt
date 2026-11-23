@@ -1,0 +1,8 @@
+每次執行 wiki_query，按命中頁、目標頁及來源摘要的 wiki_read_page 正文判讀。0 表示目標未返回。下表的三次排名是寫入正文後、補索引後與最後複驗；排名只衡量檢索可見性。已知題目進入索引，故結果僅支持指定問句。底部另列自由關鍵字觀察。
+### 新題 2　Orca 和 Agents Window 在管理 Worktree 與 Agent 的操作方式上有何不同？
+
+主要頁排名 2 → 1 → 1。末次查詢 2026-11-21T15:24:47.610Z，讀頁 2026-11-21T15:24:48.345Z。
+
+讀回 [工具比較與工程環境選擇](../../.wiki/wiki/concepts/tool-management.md)。Agents Window 依 session 選 Branch／New Worktree，Orca 依專案與 worktree 管理工作區，監督另看 Task／Dispatch。 來源：P06、P12、P13。判定：正文足以支持此有範圍的結論。
+
+返回（排名順序）：concepts/tool-management.md、concepts/coordination.md、concepts/cost.md、concepts/agent-workflow.md、concepts/quality.md、concepts/single-agent.md、sources/p02-summary.md、concepts/role-design.md、concepts/supervision.md、concepts/worktree.md、concepts/conflict.md、sources/p05-summary.md、concepts/authority.md、sources/p01-summary.md、sources/u-a-summary.md、concepts/harness.md、concepts/agent-loop.md、concepts/task-graph.md、guides/chapter-03.md、guides/chapter-04.md、sources/p14-summary.md、concepts/context-tools.md、guides/chapter-02.md、guides/chapter-05.md、sources/p17-summary.md、guides/chapter-01.md、sources/u-b-summary.md、sources/u-c-summary.md、sources/p13-summary.md、sources/p15-summary.md、sources/p20-summary.md、sources/p03-summary.md、sources/s05-summary.md。

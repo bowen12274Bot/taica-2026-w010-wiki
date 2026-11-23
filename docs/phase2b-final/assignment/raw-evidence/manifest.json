@@ -1,0 +1,293 @@
+[
+  {
+    "file": "ingest-p01.txt",
+    "title": "P01｜Building effective agents",
+    "kind": "正式工具回執",
+    "source": "evidence/ingest-log.md",
+    "lines": [
+      [
+        27,
+        27
+      ]
+    ],
+    "historical_time": "2026-11-21T14:08:58.171Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "5a3d9d00243c27e2524705cb65a3de385384a64ac32797d163f42496976a02c3",
+    "excerpt_sha256": "8fdb693cd0b16bae631153c3c2079d4367ee65824bbe0cf0c4b92495ccc54fe4",
+    "use": "Phase 1 的 wiki_ingest_with_context。Anthropic Engineering 的公開文件整理，回執建立 sources/p01-summary.md 並更新索引與日誌。後續讀回見「六頁摘要讀回」原檔第 38 行。"
+  },
+  {
+    "file": "ingest-p02.txt",
+    "title": "P02｜Running agents",
+    "kind": "正式工具回執",
+    "source": "evidence/ingest-log.md",
+    "lines": [
+      [
+        29,
+        29
+      ]
+    ],
+    "historical_time": "2026-11-21T14:09:14.442Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "5a3d9d00243c27e2524705cb65a3de385384a64ac32797d163f42496976a02c3",
+    "excerpt_sha256": "31200e3cf694b1744cc9b63c49dff53e34d4f51457702e3cd652a11c06b41598",
+    "use": "Phase 1 的 wiki_ingest_with_context。OpenAI 的公開文件整理，回執建立 sources/p02-summary.md 並更新索引與日誌。後續讀回見「六頁摘要讀回」原檔第 39 行。"
+  },
+  {
+    "file": "ingest-p06.txt",
+    "title": "P06｜Use the Agents window",
+    "kind": "正式工具回執",
+    "source": "evidence/phase1b/ingest-log.md",
+    "lines": [
+      [
+        23,
+        23
+      ]
+    ],
+    "historical_time": "2026-11-21T15:20:13.343Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "975d715c11601225c7d61020855145a71bfdf9b1504a59938145a837a057f142",
+    "excerpt_sha256": "615d2d4cd9332e0b636c3b3904633fd8984824655afba385c1efe7903bc99d2c",
+    "use": "Phase 1B 的 wiki_ingest_with_context。Microsoft／OpenAI 的公開文件整理，回執建立 sources/p06-summary.md 並更新索引與日誌。後續讀回見「六頁摘要讀回」原檔第 43 行。"
+  },
+  {
+    "file": "ingest-p12.txt",
+    "title": "P12｜Worktrees",
+    "kind": "正式工具回執",
+    "source": "evidence/phase1b/ingest-log.md",
+    "lines": [
+      [
+        29,
+        29
+      ]
+    ],
+    "historical_time": "2026-11-21T15:20:33.474Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "975d715c11601225c7d61020855145a71bfdf9b1504a59938145a837a057f142",
+    "excerpt_sha256": "ad8e05d2120437195c75386ccd13a8dfd6cff4cf56392f8fa3bbcce813719283",
+    "use": "Phase 1B 的 wiki_ingest_with_context。Orca 的公開文件整理，回執建立 sources/p12-summary.md 並更新索引與日誌。後續讀回見「六頁摘要讀回」原檔第 47 行。"
+  },
+  {
+    "file": "ingest-p04.txt",
+    "title": "P04｜Build skills",
+    "kind": "正式工具回執",
+    "source": "evidence/phase1c/source-and-claim-audit.md",
+    "lines": [
+      [
+        29,
+        29
+      ]
+    ],
+    "historical_time": "2026-11-21T16:05:08.908Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "4fd32afbb9fb7b59038c46360edabddf4ecf06836aa134b880b1fe38fae6cee5",
+    "excerpt_sha256": "6344d7947a4f1ed3cee6a0a98a755cc5249f38d390a6bd95aa3f11b5553151a0",
+    "use": "Phase 1C 的 wiki_ingest_with_context。OpenAI 的公開文件整理，回執建立 sources/p04-summary.md 並更新索引與日誌。後續讀回見「六頁摘要讀回」原檔第 41 行。"
+  },
+  {
+    "file": "ingest-p07.txt",
+    "title": "P07｜Use browser tools with agents",
+    "kind": "正式工具回執",
+    "source": "evidence/phase1c/source-and-claim-audit.md",
+    "lines": [
+      [
+        31,
+        31
+      ]
+    ],
+    "historical_time": "2026-11-21T16:05:17.254Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "4fd32afbb9fb7b59038c46360edabddf4ecf06836aa134b880b1fe38fae6cee5",
+    "excerpt_sha256": "8241e491030f8383a3ecf89c31006850e1aeb6cdd11f1614cbdc37571266fdb7",
+    "use": "Phase 1C 的 wiki_ingest_with_context。Microsoft 的公開文件整理，回執建立 sources/p07-summary.md 並更新索引與日誌。後續讀回見「六頁摘要讀回」原檔第 44 行。"
+  },
+  {
+    "file": "read-six.txt",
+    "title": "六頁摘要讀回",
+    "kind": "歷史讀回紀錄",
+    "source": "evidence/phase1c/source-and-claim-audit.md",
+    "lines": [
+      [
+        38,
+        38
+      ],
+      [
+        39,
+        39
+      ],
+      [
+        41,
+        41
+      ],
+      [
+        43,
+        43
+      ],
+      [
+        44,
+        44
+      ],
+      [
+        47,
+        47
+      ]
+    ],
+    "historical_time": "2026-11-21T16:10:37.906Z",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "4fd32afbb9fb7b59038c46360edabddf4ecf06836aa134b880b1fe38fae6cee5",
+    "excerpt_sha256": "c05a51fea4b9740ea4bd42061f75e3f0814cde3f4eef365787f0e48a8dc0638c",
+    "use": "逐頁列出摘要位置、當時讀得的字元數與公開來源定位。六個時戳均與總表相符。"
+  },
+  {
+    "file": "session-query.txt",
+    "title": "比較工作區的查詢與讀頁",
+    "kind": "歷史驗證紀錄",
+    "source": "evidence/phase1b/query-validation.md",
+    "lines": [
+      [
+        3,
+        3
+      ],
+      [
+        13,
+        19
+      ]
+    ],
+    "historical_time": "2026-11-21T15:24:47.610Z 查詢；15:24:48.345Z 讀頁",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "2ad6225dbd22a3277424b616679abfdcc333253403e99d77858f83b238c7182a",
+    "excerpt_sha256": "b3978b90706909b5fd7f8852fe2f71524dde6bba362842114d5fea6ef189235a",
+    "use": "wiki_query 的末輪首項為 concepts/tool-management.md。wiki_read_page 讀回後，記錄者分列 P06、P12、P13 的操作差異。題目曾進入索引。"
+  },
+  {
+    "file": "session-wiki.txt",
+    "title": "概念頁列出的兩種工作區入口",
+    "kind": "現存 Wiki 頁",
+    "source": ".wiki/wiki/concepts/tool-management.md",
+    "lines": [
+      [
+        25,
+        25
+      ],
+      [
+        28,
+        28
+      ]
+    ],
+    "historical_time": "頁面 created 為 2026-11-21T15:22:08.701Z；節錄取本輪保存版本",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "320ff78cf50c96fa87d98ad1fe4743f20f5572e149db27a7848b79c1dafd481f",
+    "excerpt_sha256": "9d7327a6cda04aa086e1c1c013d7e4c10d4c1dba3abc412322cbbd9d033f40e9",
+    "use": "保留 P06 和 P12、P13 的兩行公開技術整理，供對照讀回判斷。頁面建立時間只定位版本歷程。"
+  },
+  {
+    "file": "browser-query.txt",
+    "title": "原句失敗、關鍵字重查與 T04 讀回",
+    "kind": "歷史驗證紀錄",
+    "source": "evidence/phase1c/query-blind-checks.md",
+    "lines": [
+      [
+        3,
+        3
+      ],
+      [
+        17,
+        21
+      ]
+    ],
+    "historical_time": "2026-11-21T16:12:10.622Z 首查；16:14:01.475Z 原句複驗；16:14:01.782Z 讀回",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "2db96b040975618a058324b79bc8fff45a9f87c160cc54a611d45354518b0228",
+    "excerpt_sha256": "5655ea09278807b2e8a0f95d47ff15dd0b822cdbac62a0c0d13538438d6e9909",
+    "use": "索引補入來源事實及步驟。原句複驗仍為零筆，改查「Browser 請求」後 T04 由未返回升至第一名（6 分）。歷史紀錄未單列關鍵字查詢的毫秒時戳。"
+  },
+  {
+    "file": "browser-wiki.txt",
+    "title": "T04 的反例與判斷依據",
+    "kind": "現存 Wiki 頁",
+    "source": ".wiki/wiki/tutorials/single-agent-coding-cycle.md",
+    "lines": [
+      [
+        24,
+        24
+      ],
+      [
+        36,
+        36
+      ]
+    ],
+    "historical_time": "頁面 created 為 2026-11-21；節錄取本輪保存版本",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "8e0593cfdc6b2d75d6d12a1f0295f1f4461d525623e300b66b5e245b759aab36",
+    "excerpt_sha256": "c2cd8f5ad5b30f6e7456843aab525a119b2aec6783123c200ed648cfb4c18d8a",
+    "use": "教材設計的可反駁條件是先用兩筆資料建立基線，再檢查請求、篩選與清除。案例資料及預期屬合成教學。"
+  },
+  {
+    "file": "browser-textbook.txt",
+    "title": "教材明列 T04 的引用段落",
+    "kind": "教材事後映射",
+    "source": "docs/textbook/ch02/B-environment.md",
+    "lines": [
+      [
+        53,
+        53
+      ]
+    ],
+    "historical_time": "4b61e62 已驗收教材；本輪查對，無歷史工具時戳",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "e70bdd5c6506dc0771444ead779b678b59ab6aeda1ea54de4bac33ada1f48641",
+    "excerpt_sha256": "f3007fbdd30ee8562ab0e14be349e2236008441e863e8f029a714002b1a8beb0",
+    "use": "第二章 2.B.03（資料 ID C19）的判斷題明列 T03、T04、P07 等依據。學生必須排除「原本就只有 A」的解釋。"
+  },
+  {
+    "file": "teaching-loop.txt",
+    "title": "共享型別反例的修正及讀回",
+    "kind": "歷史教學驗證紀錄",
+    "source": "evidence/phase1c/teaching-checks.md",
+    "lines": [
+      [
+        37,
+        43
+      ]
+    ],
+    "historical_time": "2026-11-21T16:12:10.091Z／16:12:10.331Z 初讀；16:12:34.114Z 複讀",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "105fcbb923cab6b5d0ae1593203d29e09198080cfc31bc108e78c5a144e58cce",
+    "excerpt_sha256": "f96a61dc0bc231f4ac7e9c9a6173f293766a16e49adab9e559f543468c8089a8",
+    "use": "編排教材前先測能否用 T05 解題。初稿缺少共享型別改變的具體後果，加入反例再讀回，保留修正前判定。"
+  },
+  {
+    "file": "interaction-initial.txt",
+    "title": "過期回報按鈕的初測",
+    "kind": "歷史互動驗收輸出",
+    "source": "evidence/phase2b-1/interaction-initial.json",
+    "lines": [
+      [
+        36,
+        41
+      ]
+    ],
+    "historical_time": "Phase 2B-1 初測；JSON 未記錄執行時分秒",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "5f3433fae3152e508f124b2ab77b16f5710851f1578d043de486dc17fae741df",
+    "excerpt_sha256": "a9467a96341587104fecea9289486ddb97c9229e5684a6e50849b0b1bab96763",
+    "use": "JSON 物件 /C31-d1-d2-d1。依次取得過期 d1、新 d2、再試舊 d1 後，對照 lateControlActiveAfterD2 和 after，核對舊回報能否覆蓋有效配對。"
+  },
+  {
+    "file": "interaction-final.txt",
+    "title": "過期回報按鈕的複驗",
+    "kind": "歷史互動驗收輸出",
+    "source": "evidence/phase2b-1/interaction-final.json",
+    "lines": [
+      [
+        36,
+        41
+      ]
+    ],
+    "historical_time": "Phase 2B-1 複驗；JSON 未記錄執行時分秒",
+    "prepared_at": "2026-11-22T19:51:44+08:00",
+    "source_sha256": "d672c8808899f1e4bdf1e8f38a6651a4ae75c28a482fc9685e1162372882114d",
+    "excerpt_sha256": "e25532ab8ec2db7d6da8e39b504f5b1acf92f97251b7d8d739645a7919334f1e",
+    "use": "JSON 物件 /C31-d1-d2-d1。依次取得過期 d1、新 d2、再試舊 d1 後，對照 lateControlActiveAfterD2 和 after，核對舊回報能否覆蓋有效配對。"
+  }
+]
